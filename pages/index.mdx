@@ -9,3 +9,114 @@ A **simple**, **powerful** and **flexible** site generation framework with every
 ## Documentation
 
 The documentation is available at [https://nextra.site](https://nextra.site).
+
+
+
+Answers to my questions for the Vercel Take Home Assessment:
+
+
+1.From this list, rank your 5 most favourite and 5 least favourite support tasks. Provide a brief explanation for each. 
+First 5 are my most favourite:
+- •	Dig through logs to troubleshoot a customer's broken project - I like working through logs to find the specific issue or prove my own logic and potentially if possible provide a bugfix for the product depending on how the issue has broken. 
+- •	Write and maintain support articles and docs pages - This is a task I particularly like as it reinforces the concepts and the fixes in my head and allows my colleagues and peers to provide feedback to improve the document or add additional information.
+- •	Identify, file (and, where possible, resolve) bugs in private and public Vercel/Next.js repos on GitHub - This is always something that is interesting to me and something I would like to do more off, something I currently enjoy doing in my current role, not so much resolving them but highlighting them and escalating via jira to allow devs to resolve with my thoughts and suggestions and the feedback I get back is value in gaining a deeper understanding of the product. 
+-•	Run ticket review sessions to make sure tone is consistent - This is super important to ensure customers get the best possible service and ensure consistent service within the wider teams. 
+-•	Find and recruit teammates for the support team - This is always a really interesting task and role and allows you to bring in different people to compilment your existing skill set and potentially improve the teams overall strengths. Also really important to get the right people with the right attitude.
+
+Here are the 5 things I find less enjoyable:
+- •	Respond to 25+ support requests via email every day - this is unlikely to be long term sustainable for indepth technical tickets that require investigation and properly thought out fixes or potentially these are very simple tickets that require little in the way of technical investigation. Both have very different problems and not something I would enjoy doing. 
+- •	Manage a support team - I have done people management and will reasonably good at it I personally find the admin side of it to be lacking in fullfilment. I really enjoy the human interaction and enabling peers and team memebers but the large amount of admin that comes with it makes it less enjoyable. 
+-•	Help resolve billing issues for customers - This is something I have had experience doing and don't mind it just not as enjoyable as solving technical problems. 
+-•	Work with 3rd party partners to track down a tricky situation for a joint customer - really this is an interesting one if you are working with partners or teams that have the same ethos this is a very enjoyable and rewarding thing to do, however if the team / partner you are working with is working with a different ethos that does not intergrate well with yours then it can be a very challenging situation and potentially result in a very poor experience for the customer. 
+-•	Create video tutorials to help teach users a specific feature or use case - I have a face for radio. Honestly Don't mind the scripting side of this and helping voice over but prefer not to be on camera. 
+
+2.What do you want to learn or do more of at work? - I want to learn more CI/CD pipelines and programming at work as well as become better at scripting ie use it more often in my job than I currently do. 
+
+3. Describe how you solved a challenge or technical issue that you faced in a previous role (preferably in a previous support role). How did you determine that your solution was successful?
+Current support role customer came to the team with a specific use case by pass for the WAF and it was deemed by two senior engineers not something that we should investigate due to the version being used was no longer supported however I noticed that the bypass poc was looking legit so ran it against my own internal machine and it worked, then referred it to threat research and requested the engineer who had the ticket reach out to the customer and about a week later a global rule was pushed to prevent the attack. Really interesting case as I worked with Threat research to confirm the issue before getting the rest of the team involved but it showed the customer we took it seriously as they were unhappy with our inital response rightly so but really happy with the follow up. 
+
+4. When would you choose to use Edge Functions, Serverless Functions, or Edge Middleware with Vercel?
+- Really depends on what you are doing and what you actually want to do however I will break it down in three parts:
+- Edge Functions - Used for extremely low latency and can be an anywehre in the globe and is for real time user specific content however all three pieces can be used together and really depends on what the user requirements are. but yeah edge functions are mostly used for streaming user content and dont suffer from the cold start that is a con of edge middleware
+- Edge Middleware - Enables developers to easily monitor and analyze log and trace data generated on Vercel, gain insights into their applications, and proactively address potential issues  so this would be used for logging and analysing what is going on with the code / infra / applications  that has been deploying  
+-Serverless Functions - Functions enable running compute on-demand without needing to manage your own infrastructure, provision servers, or upgrade hardware and what this means you can basically do all your backend processing on them but there are pros and cons to this. The pros are you can scale automatically and without intervention from user, they are also cost effective as well. Cons: There is latency assosicated with cold starts. Vendor lock in. Potentially unforseen costs if there is a huge spike in demand for resources. Can be more complex to debug than a traditional 
+
+5.Imagine a customer writes in requesting help with a build issue on a framework or technology that you've not seen before. How would you begin troubleshooting this and what questions would you ask the customer to understand the situation better?
+
+If a customer wrote in asking with a build issue I had never worked before I would do the following.
+
+- Ask for a specific error or problem they have gotten. 
+- What documentation or guides where they following. 
+- was this their first time doing this or something that had previously worked 
+- I would also look at internal tickets to see if this issue was something a previous engineer had worked on and see what they had done. 
+- Google to see if I understand and then research it further from that point of view. 
+- Check to make sure that the tech stack they were using was actually supported. 
+
+6.The customer from question 5 replies to your response with the below:
+
+    “I’m so frustrated. I’ve been trying to make this work for hours and I just can’t figure it out. It must be a platform issue so just fix it for me instead of asking me questions.”
+    Please write a follow-up reply to the customer.
+
+Dear Customer, 
+
+Completely understand your fustration with problem x and I want to assist you to fix this as efficently as possible. 
+
+I understand the issue is causing you some serious problems. 
+
+Would you agree to a 30 minute information gathering session on zoom so I can understand and your issue better and you can show me a repliciation of the issue so we can narrow down the problem and provide an appropiate fix?
+
+Looking forward to your response 
+
+Regards, 
+Philip
+
+If a customer is that annoyed or unhappy sometime giving them some human interaction as well as logically going through the problem can help reduce the temperature and help the customer reset the conversation. 
+
+7.A customer writes in to the Helpdesk asking "How do I do a redirect from the /blog path to https://example.com?" Please write a reply to the customer. Feel free to add any information about your decision making process after the reply.
+
+Dear Customer, 
+
+Thanks for reaching out to Vercel Support. 
+
+To help better understand your query can you advise what you are wanting to redirect specifically? 
+
+ You will be able to use the following documentation to redirect in various ways. eg. statically or dynamically.
+
+https://vercel.com/docs/edge-network/redirects
+
+I would suggest reading through that documentation to see if it meets your needs if not please provide more specific information about what you are trying to achieve and I will be able to follow up with additional information. 
+
+What I am doing is just checking what the user is trying to do provide them with the documentation which likely has the answer requried and leaving it up to them if they need additional help to provide more information which I can then use to give them a specific answer. 
+
+
+8.A customer is creating a site and would like their project not to be indexed by search engines. Please write a reply to the customer. Feel free to add any information about your decision making process after the reply.
+
+Hi Folks, 
+
+Thanks for reaching out to Vercel Support. 
+
+To prevent a website or project from being indexed by search engines you can follow the documentation I have attached - https://vercel.com/docs/deployments/preview-deployments 
+
+However below is a gist of what is provided in the article. 
+Since a Preview Deployment creates a new version of your site under a different domain, a search engine would consider it as a new website when crawling it.
+
+This can have a negative impact on the ranking of your main site since crawlers are able to detect when content is duplicated across multiple domains and lower the ranking of your site when measuring the content quality.
+
+To prevent that, the X-Robots-Tag HTTP header is automatically set to noindex for all Preview Deployments so that search engines do not accidentally index the Preview URLs.
+
+When a custom domain is assigned to a Git branch, this behavior is prevented. In that case, the X-Robots-Tag header is not set.
+
+Let me know if that answers your query or if you have any follow up questions. 
+
+Regards, 
+Philip
+Just used the vercel documentation and I know that this is a straightforward one for google crawlers which are the most common. If we are talking about machine learning crawlers such as ones from OpenAI there is a slightly different approach depending but I am assuming this is what is being asked. 
+
+9.What do you think is one of the most common problems which customers ask Vercel for help with? How would you help customers to overcome common problems, short-term and long-term?
+
+I suspect the most common problem Vercel deals with would be poor long term planning and it would be specifically to do with billing. Its one of the issues I flagged about about serverless functions as a con and its a problem with any serverless function regardless of the vendor. I suspect billing would be one of the most difficult problems and one of the most common that vercel deals with. 
+It dpeneds on the stakeholder and how to approach it really and it also depends on vercels own processes and policies because at the end of the day computation is not free. I think the first thing would be to understand the bigger impact to the customer and what Vercels policies allows to help the customer and then secondly more long term is to help them manage and understand if they are making the right choices for their project and potentially offer other solutions within vercel or suggestions to prevent this from occurring. This is obviously a very distressing situation for the customer and needs to be handled with sensitivity and thoughtfulness as well as understanding that there are contractual issues tied to it. 
+
+10.How could we improve or alter this familiarisation exercise?
+
+I believe maybe a briefing from someone in the team would be a nice touch before commiting to 3 hours to this assessment, just to show that your time is valued. Also allows for questions to be asked instead of during the assessment which has a 3 hour time limit and potentially you won't get a response if you are mid way through. 
